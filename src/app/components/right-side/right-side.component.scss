@@ -1,4 +1,143 @@
-div {
+.container {
   height: 100%;
-  background-color: #100E1D;
+  width: 100%;
+  background-color: #100e1d;
+  padding: 3rem 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 3rem;
+}
+
+.temp-scale {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+  font-size: 24px;
+  color: #e7e7eb;
+}
+
+.scale {
+  background-color: #585676;
+  color: #e7e7eb;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.scale p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.active {
+  background-color: #e7e7eb;
+  color: #110e3c;
+}
+
+.days {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: #e7e7eb;
+  width: 100%;
+}
+
+.day {
+  height: 177px;
+  width: 120px;
+  background-color: #1e213a;
+  display: flex;
+  row-gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.day p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.min-temp {
+  color: #a09fb1;
+}
+
+.highlights {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  row-gap: 1rem;  
+}
+
+.highlights h3 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #e7e7eb;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.double {
+  padding: 1rem;
+  grid-column: span 2;
+  grid-row: span 2;
+  display: flex;
+  row-gap: .5rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1E213A;
+}
+
+.one {
+  padding: 1rem;
+  grid-column: span 2;
+  grid-row: span 1;
+  display: flex;
+  row-gap: .5rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1E213A;
+}
+
+.double p, .one p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #e7e7eb;
+}
+
+.one h2, .double h2 {
+  margin: 0;
+  font-size: 64px;
+  font-weight: 700;
+  color: #e7e7eb;
+}
+
+.one h2 span, .double h2 span {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 500;
+  color: #e7e7eb;
+}
+
+.flex p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #E7E7EB;
 }

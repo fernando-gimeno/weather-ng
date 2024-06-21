@@ -1,3 +1,57 @@
-<div>
-  
+<div class="container right">
+  <div class="temp-scale">
+    <div class="scale active">
+      <p>°C</p>
+    </div>
+    <div class="scale">
+      <p>°F</p>
+    </div>
+  </div>
+
+  <div class="days">
+    @for (day of weatherData?.days; track day.datetimeEpoch) {
+    <div class="day">
+      <p>{{ day.datetime | date : "EEE, MMM YYYY" }}</p>
+      <ng-icon [name]="getIcon(day.icon)" size="48"></ng-icon>
+      <div class="flex gap-1">
+        <p class="max-temp">{{ day.tempmax }}°C</p>
+        <p class="min-temp">{{ day.tempmin }}°C</p>
+      </div>
+    </div>
+    }
+  </div>
+
+  <div class="highlights">
+    <h3>Today's highlights</h3>
+    <div class="grid">
+      <div class="one">
+        <p>Wind status</p>
+        <h2>
+          {{ weatherData?.currentConditions?.windspeed }}<span>km/h</span>
+        </h2>
+        <div class="flex align-center gap-1">
+          <ng-icon
+            name="phosphorCompassDuotone"
+            size="24"
+            color="white"
+          ></ng-icon>
+          <p>WSW</p>
+        </div>
+      </div>
+      <div class="one">
+        <p>Humidity</p>
+        <h2>{{ weatherData?.currentConditions?.humidity }}%</h2>
+      </div>
+
+      <div class="one">
+        <p>Visibility</p>
+        <h2>{{ weatherData?.currentConditions?.visibility }}<span>km</span></h2>
+      </div>
+
+      <div class="one">
+        <p>Air presure</p>
+        <h2>{{ weatherData?.currentConditions?.pressure }}<span>mb</span></h2>
+      </div>
+    </div>
+  </div>
 </div>

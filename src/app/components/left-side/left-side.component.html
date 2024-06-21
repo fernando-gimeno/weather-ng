@@ -1,26 +1,39 @@
 <div class="container left">
   <div class="header">
-    <button>Search for places</button>
+    <form [formGroup]="searchForm" (ngSubmit)="onSubmit($event)">
+      <input type="text" id="city" formControlName="city" />
+      <button type="submit">Search for places</button>
+    </form>
     <div>
-      <ng-icon name="phosphorCrosshairDuotone" size="30" color="white"></ng-icon>
+      <ng-icon
+        name="phosphorCrosshairDuotone"
+        size="30"
+        color="white"
+      ></ng-icon>
     </div>
   </div>
 
-  <ng-icon name="phosphorCloudDuotone" size="90" color="white"></ng-icon>
-  
-  <h1 class="grades">15<span class="scale">°C</span></h1>
-  
-  <h2 class="description">Shower</h2>
+  <ng-icon
+    [name]="getIcon(weatherData?.currentConditions?.icon)"
+    size="90"
+    color="white"
+  ></ng-icon>
+
+  <h1 class="grades">
+    {{ weatherData?.currentConditions?.temp }}<span class="scale">°C</span>
+  </h1>
+
+  <h2 class="description">{{ weatherData?.currentConditions?.conditions }}</h2>
 
   <div class="footer">
     <div class="flex gap-1">
       <p>Today</p>
       <p>•</p>
-      <p>Fri, 5 Jun</p>
+      <p>{{ getCurrentDate() }}</p>
     </div>
     <div class="flex align-center justify-center gap-1">
-      <ng-icon name="phosphorMapPinDuotone" size="20" color="white"></ng-icon>
-      <p>London</p>
+      <ng-icon name="phosphorMapPinDuotone" size="18" color="white"></ng-icon>
+      <p>{{ weatherData?.address }}</p>
     </div>
   </div>
 </div>
