@@ -28,7 +28,7 @@ export class WeatherApiService {
     this.subscription?.unsubscribe();
     this.subscription = this.http
       .get<WeatherResponse>(
-        `${this.baseUrl}/${city}%2C%20${state}/next7days?unitGroup=metric&key=${environment.weatherApi.apiKey}&contentType=json`
+        `${this.baseUrl}/${city}%2C%20${state}/next7days?unitGroup=metric&key=${environment.apiKey}&contentType=json`
       )
       .pipe(
         catchError((error) => {
